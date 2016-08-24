@@ -1,5 +1,5 @@
 """
-Checks that the constructor of ModelPOs throws errors when invoked with incore
+Checks that the constructor of ModelPOs throws errors when invoked with incorrect input
 
 """
 R=SOSRing(1,1,[3,3,3]) #Any SOS Ring would do for this test

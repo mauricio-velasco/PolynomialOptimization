@@ -7,9 +7,9 @@ global allowedSolvers = ["SCS"]
 """
 ModelPO
 
-Each polynomial optimization problem is built in a ring R::SOSRing
+Each polynomial optimization problem is built in some ring R::SOSRing
 Each of the gSOS of R determines a constraint in constraintTypes::Array{AbstractString}
-which is an element of the global variable allowedConstraints.
+which must be an element of the global variable allowedConstraints.
 
 The corresponding JuMP model has name modelName::AbstractString
 and is accessible directly via modelObj. The solver info is encoded in the solverString field.
