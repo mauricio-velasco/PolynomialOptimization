@@ -44,7 +44,7 @@ initializeModelPO(R::SOSRing, constraintTypes::Array{AbstractString}, modelName:
 
 This is the main function for constructing ModelPO objects.
 """
-function initializeModelPO(R::SOSRing, constraintTypes::Array{ASCIIString}, modelName::AbstractString ; modelDescription = ["SOS"], solverName ="SCS", solverAccuracy = 1e-6)
+function initializeModelPO(R::SOSRing, constraintTypes::Array{String}, modelName::AbstractString ; modelDescription = ["SOS"], solverName ="SCS", solverAccuracy = 1e-6)
   #First, we define the JuMP model
   solverString = solverStringFunc(solverName, solverAccuracy)
   eval(parse("global $modelName = Model($solverString)"))
@@ -79,7 +79,7 @@ modelPOObj = initializeModelPO(R, "SOS", "modelo1")
 function initializeModelPO(R::SOSRing, constraintTypes::AbstractString, modelName::AbstractString ; modelDescription = ["SOS"], solverName ="SCS", solverAccuracy = 1e-6)
   if !(constraintTypes in allowedConstraints) throw(ErrorException("Constraint type not recognized")) end
   if constraintTypes == "SOS"
-    constraintTypesVector = ASCIIString[constraintTypes for k in 1:length(R.degreesVec)]
+    constraintTypesVector = String[constraintTypes for k in 1:length(R.degreesVec)]
     return initializeModelPO(R, constraintTypesVector, modelName, modelDescription = modelDescription,solverName = solverName, solverAccuracy = solverAccuracy)
   else
     throw(ErrorException("Unrecognized constraint type"))
