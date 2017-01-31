@@ -1,7 +1,7 @@
 """
 SOSRing
 
-This is the environment for writing polynomial optimization
+This is the type used for writing polynomial optimization
 problems with sums of squares. Any instance of SOSRing contains
 
 n => number of variables for the polynomials
@@ -52,7 +52,7 @@ end
 """
 exponentVctsAddOneMoreVar(monomialList, atMostd)
 
-Given an array monomialList of exponent vectors of length k with sum <= atMostd
+Given the array monomialList of exponent vectors of length k with sum <= atMostd
 returns the array of all exponent vectors of length k+1 with sum <= atMostd
 whose first k components were in some element of monomialList
 """
@@ -85,8 +85,8 @@ end
 """
 intArray2MonomFn(Index2VariableFunc, indices)
 
-Returns a monomial from the vector of exponents indices. The corresponding monomial lives in a
-ring with variables determined by the function Index2VariableFunc
+Returns a monomial from the vector of exponent indices. The corresponding monomial lives in a
+ring with variables given by the function Index2VariableFunc
 """
 function intArray2MonomFn(Index2VariableFunc, indices)
   Res = Index2VariableFunc(1)^(0)

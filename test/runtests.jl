@@ -1,5 +1,4 @@
 using Base.Test
-using MultiPoly
 using PolynomialOptimization
 
 include("SOSRing.jl")
