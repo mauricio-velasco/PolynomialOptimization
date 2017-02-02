@@ -86,8 +86,6 @@ function initializeModelPO(R::SOSRing, constraintTypes::AbstractString, modelNam
   end
 end
 
-"""
-"""
 function addEqZeroConstraint(mod::ModelPO, RP::MultiPoly.MPoly)
   #Adds the constraints encoded by a polynomial RP which is linear in Y and the Z_i
   Res =  coefficientsInXV(mod.R, RP)
