@@ -2,7 +2,7 @@ module PolynomialOptimization
 
 using DataStructures
 using MultiPoly
-Base.promote_op{R}(::Base.MulFun, ::Type{MultiPoly.MPoly{R}}, ::Type{MultiPoly.MPoly{R}}) = MultiPoly.MPoly{R}
+Base.promote_op{R}(::typeof(*), ::Type{MultiPoly.MPoly{R}}, ::Type{MultiPoly.MPoly{R}}) = MultiPoly.MPoly{R}
 using JuMP
 using SCS
 
